@@ -3,7 +3,8 @@ var concert = {};
 
 $(document).ready(initialize);
 
-function initialize(){
+function initialize(fn, flag){
+  if(!canRun(flag)){return;}
   $(document).foundation();
   $('#createSeats').click(clickCreateSeats);
 }
@@ -19,25 +20,25 @@ function clickCreateSeats(){
 }
 
 function putSeats(section, seatNum){
-  if(section=='vip'){
+  if(section==='vip'){
     //vip
-    concert.vipCost = getValue('#seatNum',parseFloat);
-    htmlAddSeats('#vip');
+    concert.vipCost = getValue('#seatCost',parseFloat);
+    htmlAddSeats('#vip',seatNum);
 
   }else{
     //ga
-    concert.gaCost = getValue('#seatNum',parseFloat);
-    htmlAddSeats('#ga');
+    concert.gaCost = getValue('#seatCost',parseFloat);
+    htmlAddSeats('#general',seatNum);
   }
 
 }
 
-function htmlAddSeats(selector){
+function htmlAddSeats(selector,seatNum){
   for(var i = 0; i<seatNum; i++){
-      $seat = $('<div>');
-      $seat.text('Seat # ' + (i+1));
-      $(selector).append($seat);
-    }
+    var $seat = $('<div>');
+    $seat.text(i+1);
+    $(selector).append($seat);
+  }
 }
 
 
@@ -58,4 +59,12 @@ function getValue(selector, fn){
 
 function formatCurrency(number){
   return '$' + number.toFixed(2);
+}
+
+
+function canRun(flag){
+  var isQunit = $('#qunit').length > 0;
+  var isFlag = flag !== undefined;
+  var value = isQunit && isFlag || !isQunit;
+  return value;
 }
