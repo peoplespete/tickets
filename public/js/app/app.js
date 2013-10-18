@@ -18,16 +18,18 @@ function initialize(fn, flag){
 // -------------------------------------------------------------------- //
 function dblclickReserve(){
   var name = $('#name').val();
+  if(name === '') {return;}
   console.log($(this));
-  $(this).addClass('reserved');
-  $(this).text(name);
-
+  if(!$(this).hasClass('reserved')) {
+    $(this).addClass('reserved');
+    $(this).text(name);
+  }
 }
 
 function clickCreateSeats(){
-  var seatNum = getValue('#seatNum',parseInt);
-  var section = $('#section').val();
-  putSeats(section, seatNum);
+    var seatNum = getValue('#seatNum',parseInt);
+    var section = $('#section').val();
+    putSeats(section, seatNum);
 }
 
 function putSeats(section, seatNum){
@@ -35,13 +37,18 @@ function putSeats(section, seatNum){
     //vip
     concert.vipCost = getValue('#seatCost',parseFloat);
     htmlAddSeats('#vip',seatNum);
+    $('#section option[value="vip"]').remove();
 
   }else{
     //ga
     concert.gaCost = getValue('#seatCost',parseFloat);
     htmlAddSeats('#general',seatNum);
+    $('#section option[value="ga"]').remove();
   }
 
+  if($('#vip div').length > 0 && $('#general div').length > 0) {
+    $('#left .row:last-child').remove();
+  }
 }
 
 function htmlAddSeats(selector,seatNum){

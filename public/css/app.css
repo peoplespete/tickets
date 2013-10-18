@@ -17,6 +17,12 @@ body, html {
     width: 80%;
     border: 1px solid black;
     -webkit-border-radius: 0 0 100px 100px; }
+  #right .row:nth-child(3) {
+    margin-top: 50px;
+    width: 60%; }
+  #right .row:nth-child(4) {
+    margin-top: 50px;
+    width: 80%; }
 
 #section {
   padding: 5px; }
