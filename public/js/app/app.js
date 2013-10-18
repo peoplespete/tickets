@@ -12,7 +12,7 @@ function initialize(){
 // -------------------------------------------------------------------- //
 // -------------------------------------------------------------------- //
 
-funcion clickCreateSeats(){
+function clickCreateSeats(){
   var seatNum = getValue('#seatNum',parseInt);
   var section = $('#section').val();
   putSeats(section, seatNum);
