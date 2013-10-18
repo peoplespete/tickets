@@ -38,3 +38,15 @@ body, html {
 #halfStage {
   margin-left: 45%;
 }
+
+#vip > div, #general > div {
+  float:left;
+  border: 2px dashed pink;
+  height: 50px;
+  width: 50px;
+}
+
+.reserved{
+  background-color: #252525;
+  color: yellow;
+}

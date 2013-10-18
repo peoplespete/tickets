@@ -7,11 +7,22 @@ function initialize(fn, flag){
   if(!canRun(flag)){return;}
   $(document).foundation();
   $('#createSeats').click(clickCreateSeats);
+  $('#vip').on('dblclick','div', dblclickReserve);
+  $('#general').on('dblclick','div', dblclickReserve);
+
+
 }
 
 // -------------------------------------------------------------------- //
 // -------------------------------------------------------------------- //
 // -------------------------------------------------------------------- //
+function dblclickReserve(){
+  var name = $('#name').val();
+  console.log($(this));
+  $(this).addClass('reserved');
+  $(this).text(name);
+
+}
 
 function clickCreateSeats(){
   var seatNum = getValue('#seatNum',parseInt);
