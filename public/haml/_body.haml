@@ -1,1 +1,30 @@
-/#map-canvas
+#left
+  .row
+    .small-12.columns
+      %h1#title Concert Tickets
+  .row
+    .small-6.columns
+      %select#section
+        %option{value: 'default'} Select Section
+        %option{value: 'vip'} VIP Section
+        %option{value: 'ga'} General Admission
+    .small-3.columns
+      %input#seatNum{type: 'text', placeholder: '35'}
+    .small-3.columns
+      %input#seatCost{type: 'text', placeholder: '$100'}
+    .small-12.columns
+      %input#createSeats.button.success.radius.expand{type: 'button', value:'Create Seats'}
+#right
+  .row
+    .small-2.columns
+      %h2#subtitle Reserve:
+    .small-3.columns
+      %input#name{type: 'text', placeholder: 'Scott Stapp'}
+    .small-7.columns
+  .row
+    .small-12.columns
+      #stage
+    .small-12.columns
+      #vip
+    .small-12.columns
+      #general

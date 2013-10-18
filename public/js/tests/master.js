@@ -1,18 +1,13 @@
-// 'use strict';
+'use strict';
 
-// module('name-of-section-for-grouping', {setup: setupTest, teardown: teardownTest});
+module('Concert Tickets app testing', {setup: setupTest, teardown: teardownTest});
 
-// function setupTest(){
-//   Δdb.remove();
-// }
+function setupTest(){
+}
 
-// function teardownTest(){
-// }
+function teardownTest(){
+}
 
-// test('name-of-test', function(){
-//   expect(2);
-// });
-
-// asyncTest('name-of-test', function(){
-//   expect(1);
-// });
+test('name-of-test', function(){
+  expect(2);
+});

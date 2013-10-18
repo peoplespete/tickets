@@ -4,20 +4,63 @@
 <head>
   <meta charset='utf-8'>
   <meta content='width=device-width' name='viewport'>
-  <title>Master Template</title>
+  <title>Concert Tickets</title>
   <link href='/css/normalize.css' rel='stylesheet'>
   <link href='/css/foundation.css' rel='stylesheet'>
   <link href='/css/app.css' rel='stylesheet'>
   <script src='/js/vendor/custom.modernizr.js'></script>
-  <script src='/js/app/keys.js'></script>
 </head>
 <body>
-  <!-- #map-canvas -->
+  <div id='left'>
+    <div class='row'>
+      <div class='small-12 columns'>
+        <h1 id='title'>Concert Tickets</h1>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='small-6 columns'>
+        <select id='section'>
+          <option value='default'>Select Section</option>
+          <option value='vip'>VIP Section</option>
+          <option value='ga'>General Admission</option>
+        </select>
+      </div>
+      <div class='small-3 columns'>
+        <input id='seatNum' placeholder='35' type='text'>
+      </div>
+      <div class='small-3 columns'>
+        <input id='seatCost' placeholder='$100' type='text'>
+      </div>
+      <div class='small-12 columns'>
+        <input class='button success radius expand' id='createSeats' type='button' value='Create Seats'>
+      </div>
+    </div>
+  </div>
+  <div id='right'>
+    <div class='row'>
+      <div class='small-2 columns'>
+        <h2 id='subtitle'>Reserve:</h2>
+      </div>
+      <div class='small-3 columns'>
+        <input id='name' placeholder='Scott Stapp' type='text'>
+      </div>
+      <div class='small-7 columns'></div>
+    </div>
+    <div class='row'>
+      <div class='small-12 columns'>
+        <div id='stage'></div>
+      </div>
+      <div class='small-12 columns'>
+        <div id='vip'></div>
+      </div>
+      <div class='small-12 columns'>
+        <div id='general'></div>
+      </div>
+    </div>
+  </div>
   <script src='/js/vendor/jquery-1.10.2.js'></script>
   <script src='/js/vendor/foundation.min.js'></script>
   <script src='/js/vendor/underscore.js'></script>
   <script src='/js/vendor/moment.min.js'></script>
-  <script src='https://cdn.firebase.com/v0/firebase.js'></script>
-  <!-- %script{src: 'https://maps.googleapis.com/maps/api/js?key=__________&sensor=true'} -->
   <script src='/js/app/app.js'></script>
 </body>
