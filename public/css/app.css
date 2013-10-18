@@ -13,10 +13,17 @@ body, html {
   width: 70%; }
   #right .row:first-child {
     border-bottom: 1px solid black; }
+  #right .row:nth-child(2) {
+    width: 80%;
+    border: 1px solid black;
+    -webkit-border-radius: 0 0 100px 100px; }
 
 #section {
   padding: 5px; }
 
 #name {
   height: 100%;
-  margin-top: 16px; }
+  margin-top: 19px; }
+
+#halfStage {
+  margin-left: 45%; }
