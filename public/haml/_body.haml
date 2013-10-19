@@ -14,6 +14,46 @@
       %input#seatCost{type: 'text', placeholder: '$100'}
     .small-12.columns
       %input#createSeats.button.success.radius.expand{type: 'button', value:'Create Seats'}
+  .row
+    .small-12.columns
+      %h3 Reporting
+  .row
+    .small-6.columns
+      .row
+        .small-12.columns
+          Total VIP:
+          %span#totV
+      .row
+        .small-12.columns
+          Total GA:
+          %span#totG
+      .row
+        .small-12.columns
+          Grand Total:
+          %span#tot
+      .row
+        .small-12.columns
+          VIP People:
+          %span#veeps
+      .row
+        .small-12.columns
+          GA People:
+          %span#geeps
+      .row
+        .small-12.columns
+          Total People:
+          %span#teeps
+    .small-6.columns
+      .row
+        .small-4.columns
+          VIP:
+        .small-8.columns
+          %ul#vipList
+      .row
+        .small-4.columns
+          GA:
+        .small-8.columns
+          %ul#gaList
 #right
   .row
     .small-2.columns

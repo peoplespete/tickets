@@ -103,3 +103,22 @@ test('Disable seat creation after setting seats', function(){
   deepEqual($('#left .row').length, 1, 'Only the header should remain');
   deepEqual($('#left #title').length, 1, 'Only the header should remain');
 });
+
+test('checking report numbers', function(){
+  expect(3);
+
+  $('#section').val('vip');
+  $('#seatNum').val('45');
+  $('#seatCost').val('20');
+  $('#createSeats').trigger('click');
+
+  deepEqual($('#section option[value="vip"]').length, 0, 'there should be no VIP option anymore');
+
+  $('#section').val('ga');
+  $('#seatNum').val('75');
+  $('#seatCost').val('10');
+  $('#createSeats').trigger('click');
+
+  deepEqual($('#left .row').length, 1, 'Only the header should remain');
+  deepEqual($('#left #title').length, 1, 'Only the header should remain');
+});

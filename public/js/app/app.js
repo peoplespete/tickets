@@ -24,12 +24,26 @@ function dblclickReserve(){
     $(this).addClass('reserved');
     $(this).text(name);
   }
+  updateReporting();
+
 }
 
 function clickCreateSeats(){
     var seatNum = getValue('#seatNum',parseInt);
     var section = $('#section').val();
     putSeats(section, seatNum);
+}
+
+function updateReporting(){
+  var vipSeatList = _.map($('#vip div'),function(div){
+    return $(div).text();
+  });
+  var vipSeatNumbers = _.map($('#vip div'),function(div){
+    if(isNAN(parseInt($(div).text())){
+      var number = parseInt($(div).before().text());
+      return number+1;
+    }
+  });
 }
 
 function putSeats(section, seatNum){
@@ -47,7 +61,7 @@ function putSeats(section, seatNum){
   }
 
   if($('#vip div').length > 0 && $('#general div').length > 0) {
-    $('#left .row:last-child').remove();
+    $('#left .row:nth-child(2)').remove();
   }
 }
 
